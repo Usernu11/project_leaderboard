@@ -6,6 +6,11 @@
 // plus btn -> change score + use sort btn
 // minus btn -> change score + use sort btn
 
+// object system (upgrade)
+// create an object which contains all exist players (it's more correct and comfortable)
+// add to exist fucntions or listeners which also add new person info to the exist obj
+// make a fucntion which can sort the obj by some params
+
 // Variables
 const inputBtn = $('#input-btn') // add player
 const lb = $('.lb') // leaderboard
@@ -94,4 +99,16 @@ $(document).ready(() => {
             $(warn).toggleClass('disabled');
         }
     })
+})
+
+// Remove btn -> for old elements on page
+removeBtns.each(() => {     // for each remove btn
+    $(this).on('click', () => {     // add eventListener for cur btn
+        $(this).closest('.lb__player').remove()     // remove closest parent el of the cur btn
+    })
+})
+
+// Remove btn -> for new elements on page
+lb.on('click', '.lb__btns--remove', (event) => {
+    $(event.currentTarget).closest('.lb__player').remove()
 })
