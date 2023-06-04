@@ -1,3 +1,3 @@
-$(document).ready(function() {
-    $('body').css('background-color', 'navy')
-})
+// $(document).ready(function() {   // jquery works well
+//     $('body').css('background-color', 'steelblue')
+// }) 
