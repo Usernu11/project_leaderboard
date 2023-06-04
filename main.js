@@ -101,13 +101,7 @@ $(document).ready(() => {
     })
 })
 
-// Remove btn -> for old elements on page
-removeBtns.each(() => {     // for each remove btn
-    $(this).on('click', () => {     // add eventListener for cur btn
-        $(this).closest('.lb__player').remove()     // remove closest parent el of the cur btn
-    })
-})
-
+// Button (player card -> ❌,➕,➖)
 // Remove btn
 lb.on('click', '.lb__btns--remove', (event) => {    // delegation event to parrent
     $(event.currentTarget).closest('.lb__player').remove()   // remove closest parent el of the cur btn
