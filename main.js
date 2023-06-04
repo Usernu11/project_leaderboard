@@ -109,6 +109,25 @@ removeBtns.each(() => {     // for each remove btn
 })
 
 // Remove btn -> for new elements on page
-lb.on('click', '.lb__btns--remove', (event) => {
-    $(event.currentTarget).closest('.lb__player').remove()
+lb.on('click', '.lb__btns--remove', (event) => {    // delegation event to parrent
+    $(event.currentTarget).closest('.lb__player').remove()   // remove closest parent el of the cur btn
 })
+
+// Add btn -> for old el (new)
+plusBtns.each(function () {
+    $(this).on('click', function () {
+        let curScore = $(this).closest('.lb__player').find('.lb__score')     // find the score element
+        let scoreValue = parseInt(curScore.text())      // get the current score value
+        scoreValue += 5         // add 5 to the current score
+        curScore.text(scoreValue)            // update the score text
+    })
+})
+
+// Plus btn -> for new el (new)
+lb.on('click', '.lb__btns--plus', (event) => {    // delegation event to parrent
+    let newCurScore = $(event.currentTarget).closest('.lb__player').find('.lb__score')   // find the score element
+    let newCurScoreVal = parseInt(newCurScore.text())   // get the current score val
+    newCurScoreVal += 5         // add num for cur score
+    newCurScore.text(newCurScoreVal)    // update content
+})
+
