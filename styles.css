@@ -90,4 +90,15 @@ body {
   background-color: steelblue;
 }
 
+.warn {
+  color: yellow;
+  text-shadow: 1px 1px red;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.disabled {
+  display: none;
+}
+
 /*# sourceMappingURL=styles.css.map */

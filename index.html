@@ -22,12 +22,14 @@
     <div class="container">
         <h1>30 Days Of JavaScript Challenge Leaderboard</h1>
         <div class="inputs">
-            <input class="inputs__input" type="text" placeholder="First Name">
-            <input class="inputs__input" type="text" placeholder="Last name">
-            <input class="inputs__input" type="text" placeholder="Country">
-            <input class="inputs__input" type="number" placeholder="Player Score">
+            <input id="input-name" class="inputs__input" type="text" placeholder="First Name">
+            <input id="input-l-name" class="inputs__input" type="text" placeholder="Last name">
+            <input id="input-country" class="inputs__input" type="text" placeholder="Country">
+            <input id="input-score" class="inputs__input" type="number" placeholder="Player Score">
             <button id="input-btn">Add Player</button>
         </div>
+
+        <div class="warn disabled">All fields are required</div>
 
         <div class="lb">
             <div class="lb__player" id="my-jan-f">
