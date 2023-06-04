@@ -41,4 +41,51 @@ body {
   cursor: pointer;
 }
 
+.lb {
+  width: 100%;
+}
+.lb__player {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: navy;
+  color: #fff;
+  text-transform: uppercase;
+}
+.lb__player-data {
+  display: flex;
+  width: 55%;
+}
+.lb__player-nd {
+  width: 54%;
+}
+.lb__player-cs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 46%;
+}
+.lb__name {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.lb__date {
+  font-size: 11px;
+}
+.lb__btns > * {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  padding: 0;
+  font-family: "Comfortaa";
+  font-size: 15px;
+}
+.lb__btns > *:hover {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=styles.css.map */
