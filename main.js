@@ -1,11 +1,6 @@
 // psc
 // + make sort lb func
 
-// event lb btns
-// remove btn -> remove el from lb + use sort btn
-// plus btn -> change score + use sort btn
-// minus btn -> change score + use sort btn
-
 // object system (upgrade)
 // create an object which contains all exist players (it's more correct and comfortable)
 // add to exist fucntions or listeners which also add new person info to the exist obj
@@ -26,11 +21,24 @@ let pCountryValue  // for updating value
 let playerScore = $('#input-score')
 let pScoreValue     // for updating value
 const players = $('.lb__player')
-const playerScores = $('.lb__score')
 const removeBtns = $('.lb__btns--remove')
 const plusBtns = $('.lb__btns--plus')
 const minusBtns = $('.lb__btns--minus')
 const warn = $('.warn')
+
+// sort function
+const sortPlayers = () => {
+    const playerScores = $('.lb__score')    // find and store all cur scores
+    const sortedPlayers = playerScores.toArray().sort((a, b) => {     // convert all el to array and the arr
+        const scoreA = parseInt($(a).text())    // convert strings to numbers for sort
+        const scoreB = parseInt($(b).text())    // convert str to num for sort
+        return scoreB - scoreA          // Sort in descending order
+    })
+
+    sortedPlayers.forEach((player, index) => {      // for all (sorted) array
+        $(player).closest('.lb__player').css('order', index)      // el from arr request to closest parrent and change order or the parrent by arr index
+    })
+}
 
 $(document).ready(() => {
     playerName.on('input', () => {  // updating first name
@@ -95,6 +103,9 @@ $(document).ready(() => {
             // add new player card
             lb.append(newPlayer)
 
+            // sort
+            sortPlayers()
+
             if (!$(warn).hasClass('disabled')) {
                 $(warn).toggleClass('disabled')
             }
@@ -108,6 +119,7 @@ $(document).ready(() => {
 // Remove btn
 lb.on('click', '.lb__btns--remove', (event) => {    // delegation event to parrent
     $(event.currentTarget).closest('.lb__player').remove()   // remove closest parent el of the cur btn
+    sortPlayers()
 })
 
 // Plus btn (new)
@@ -116,6 +128,7 @@ lb.on('click', '.lb__btns--plus', (event) => {    // delegation event to parrent
     let newCurScoreVal = parseInt(newCurScore.text())   // get the current score val
     newCurScoreVal += 5         // add num for cur score
     newCurScore.text(newCurScoreVal)    // update content
+    sortPlayers()
 })
 
 // Minus btn (new)
@@ -124,4 +137,10 @@ lb.on('click', '.lb__btns--minus', (event) => {    // delegation event to parren
     let newCurScoreVal = parseInt(newCurScore.text())   // get the current score val
     newCurScoreVal -= 5         // minus num for cur score
     newCurScore.text(newCurScoreVal)    // update content
+    sortPlayers()
 })
+
+// sort f
+// check all scores on page
+// and compare each score
+// the highest score player sholud take order 0, then 1 and so on

@@ -40,6 +40,8 @@ body
 
 .lb
     width: 100%
+    display: flex
+    flex-direction: column
     &__player
         width: 98%
         @include flexBetween()
@@ -48,6 +50,7 @@ body
         background-color: navy
         color: #fff
         text-transform: uppercase
+        order: 0
     &__player-data
         display: flex
         width: 55%

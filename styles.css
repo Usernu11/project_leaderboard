@@ -43,6 +43,8 @@ body {
 
 .lb {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .lb__player {
   width: 98%;
@@ -54,6 +56,7 @@ body {
   background-color: navy;
   color: #fff;
   text-transform: uppercase;
+  order: 0;
 }
 .lb__player-data {
   display: flex;
