@@ -11,6 +11,9 @@
 // add to exist fucntions or listeners which also add new person info to the exist obj
 // make a fucntion which can sort the obj by some params
 
+// save in local storage data
+// and then load it
+
 // Variables
 const inputBtn = $('#input-btn') // add player
 const lb = $('.lb') // leaderboard

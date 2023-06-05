@@ -101,4 +101,17 @@ body {
   display: none;
 }
 
+.img {
+  width: 230px;
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  opacity: 0.9;
+  border-top-left-radius: 68px;
+  background-image: url("img/jq.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /*# sourceMappingURL=styles.css.map */
